@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block content %}
+<h1>User Sign-In Elephant - Kristin Alarcon</h1>
+<div>
+    <form method="post">
+        <table>
+            <tr>
+               <td><label for="name">Username:</label></td>
+                <td><input type="text" name="name" value='{{name}}' />
+                <span class="error">{{un_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="text" name="password" />
+                <span class="error">{{pw_error}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="pw_check">Verify password:</label></td>
+                <td><input type="text" name="pw_check" />
+                <span class="error">{{pw_error_check}}</span></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email Address(optional):</label></td>
+                <td><input type="text" name="email" value='{{email}}' />
+                <span class="error">{{email_error}}</span></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+{% endblock %}
