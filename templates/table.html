@@ -2,7 +2,7 @@
 {%block content %}
 <h1>User Sign-In Elephant - Kristin Alarcon</h1>
 <div>
-    <form method="post">
+    <form method="post" action = "/">
         <table>
             <tr>
                <td><label for="name">Username:</label></td>
@@ -11,12 +11,12 @@
             </tr>
             <tr>
                 <td><label for="password">Password:</label></td>
-                <td><input type="text" name="password" />
+                <td><input type="password" name="password" />
                 <span class="error">{{pw_error}}</span></td>
             </tr>
             <tr>
                 <td><label for="pw_check">Verify password:</label></td>
-                <td><input type="text" name="pw_check" />
+                <td><input type="password" name="pw_check" />
                 <span class="error">{{pw_error_check}}</span></td>
             </tr>
             <tr>

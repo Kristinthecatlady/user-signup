@@ -20,7 +20,7 @@ def is_valid_un_pw(password):
 
 @app.route('/', methods=['POST'])
 def validate_user():
-    '''Validate UN, PW, Email'''
+    '''Validate UN, PW and doublecheck, Email'''
 
     name = request.form['name']
     password = request.form['password']
@@ -32,10 +32,9 @@ def validate_user():
     pw_error_check = ''
     un_error = ''
     
-
     if not is_valid_un_pw(name):
         un_error = 'Not a valid username. Please review username requirements'
-
+        
     if not is_valid_un_pw(password):
         pw_error = 'Not a valid password. Please review password requirements'
         pw = ''
@@ -52,7 +51,7 @@ def validate_user():
     if not un_error and not pw_error_check and not pw_error and not email_error:
         return render_template('success.html', title="Welcome User", name=name)
     else:
-        return render_template('success.html', pw_error=pw_error,
+        return render_template('table.html', pw_error=pw_error,
                                un_error=un_error,
                                pw_error_check=pw_error_check,
                                email_error=email_error, name=name, email=email,
